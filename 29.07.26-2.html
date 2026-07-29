@@ -4,7 +4,13 @@
             function info(){
                 let age = parseInt(prompt("Enter the value of 'a' "));
                 if(age>=18){
-                    alert("You are Eligible for vote!");
+                   let c= confirm("do you want to submit your vote.");
+                   if(c){
+                    alert("Your response have been submitted!");
+                   }
+                   else{
+                    alert("Not Submitted , THANKYOU!")
+                   }
                 }
                 else{
                     alert("You are not Eligible for vote!");
