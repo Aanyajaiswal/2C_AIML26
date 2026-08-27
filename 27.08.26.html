@@ -1,0 +1,34 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>Product Management</title> 
+    </head> 
+    <body> 
+        <h2>Product Information</h2> 
+        <p id="output"></p> 
+        <script>           
+            let ABES={ 
+                p_id:101, 
+                p_name:"Aanya", 
+                p_price:2000, 
+                p_quantity:2, 
+                t_cost: function(){ 
+                    return this.p_price * this.p_quantity; 
+                },
+                updateQuantity: function(newQty){
+                    this.p_quantity = newQty;
+                },
+                displayInfo: function(){
+                    document.getElementById("output").innerHTML= 
+                        "Product ID: " + this.p_id + "<br>" +
+                        "Product Name: " + this.p_name + "<br>" +
+                        "Price: ₹" + this.p_price + "<br>" +
+                        "Quantity: " + this.p_quantity + "<br>" +
+                        "Total Cost: ₹" + this.t_cost();
+                }
+            };
+            ABES.updateQuantity(5); 
+            ABES.displayInfo(); 
+        </script> 
+    </body> 
+</html>
