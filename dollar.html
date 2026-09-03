@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+
+            let first="aanya";
+            let last="jaiswal";
+            console.log(`my name is ${first} ${last}`);
+
+            let fullName=`my name is ${first} ${last}`;
+            console.log(fullName);
+
+            function getFullName(first,last)
+            {
+                return `${first} ${last}`
+            }
+            let name= `Hello ${getFullName("aanya","jaiswal")}`;
+            console.log(name);
+
+            // arrow function
+
+            fullName=(first,last) => 
+            {
+                return `${first} ${last}`
+            }
+            console.log(fullName("AANYA","JAISWAL"));
+
+            //REST OPERATOR
+
+            function sum(...values)
+            {
+            console.log(values);
+            }
+            sum(10,20,30);
+
+            //for adding the values with rest operator
+
+            function sum(...values)
+            {
+                let total=0;
+                for(let n of values){
+                    total=total+n;
+                }
+                console.log(total);
+            }
+            sum(10,20,30);
+        
+            // for name and values
+            
+            function sum (first, last, ...value)
+            {
+            let total = 0;
+            for (let n of value)
+            {
+            total += n;
+            }
+            console.log(total);
+            console.log(first);
+            console.log(last);
+            }
+        </script>
+    </head>
+</html>
