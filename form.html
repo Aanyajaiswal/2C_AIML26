@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration Form</title>      
+    </head>
+    <body>
+        <h2>Registration Form</h2>
+        <form name="registration" onsubmit="return validate()">
+            Name: <input type="text" name="uname"><br><br>
+            E-mail: <input type="text" name="email"><br><br>
+            Password:  <input type="password" name="pass"><br><br>
+            Re-Enter password:  <input type="password" name="cpass"><br><br>
+            Mobile:  <input type="text" name="mobile"><br><br>
+
+            <input type="submit" name="submit"><br><br>
+        </form>
+        <script>
+           function validate(){
+            var n=document.registration.uname.value;
+            var e=document.registration.email.value;
+            var p=document.registration.pass.value;
+            var cp=document.registration.cpass.value;
+            var m=document.registration.mobile.value;
+            var atpos=e.indexOf("@");
+            var  dotpos=e.lastIndexOf(".");
+
+            if(n=="" || typeof n!="string"){
+               alert("ENTER VALID NAME!") ;
+               return false;
+            }
+            if(e==""|| dotpos-atpos<=3){
+                alert("Enter valid email");
+                return false;
+            }
+            if(p==""){
+                alert("Enter Password!");
+                return false;
+            }
+            if(p!=cp){
+                alert("Passwords do not match!");
+                return false;
+            }
+            if(m==""||typeof m!="Number" || m.length!=10){
+                alert("Enter Valid Mobile Number!")
+                return false;
+            }
+            alert("REGISTRATION SUCCESSFUL!!");
+            return true;
+           }
+        </script>
+    </body>
+</html>
