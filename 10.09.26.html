@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        
+        // function sum(...data)
+        // {
+        //     let sum=0;
+        //     for(let i of data)
+        //     {
+        //         sum=sum+i;
+        //     }
+        //     console.log(sum);
+        // }
+        //     let data=[10,20,30,40];
+        //     console.log(...data);
+        //     console.log(data);
+        
+
+
+
+
+
+
+
+        let a=[10,20,30,40];
+        let b=[50,60,70,80];
+        // c=a.concat(b);
+        let c=[...a,...b];
+        console.log(c);
+
+
+        
+        //object literals
+
+        //if data member an object data member is same.
+
+        // let name="aanya";
+        // let roll="0002";
+        // let student= {
+        //     name,roll
+        // }
+        // console.log(student.name,student.roll);
+
+
+
+
+        // let n="name";
+        // let student={
+        //     ["first"+n]:"aanya",
+        //     ["last"+n]:"jaiswal"
+
+        // }
+        // console.log(student.firstname,student.lastname);
+
+
+
+
+
+
+        //   let name ="aanya";
+        //   let roll="00002";
+        //   let student={name, roll,
+        //    display(){
+        //     console.log(this.name,this.roll);
+        //   },
+
+        // }
+        // console.log(student.display());
+
+
+
+        //array destructuring - to make code short and easy
+
+        let student=["aanya",250,"varanasi",221401];
+        let [name,roll,city,pincode]=student;   //let[name,roll=101,city="delhi",pincode]- can also be written if the value is not passed initially
+        console.log(name,roll,city,pincode);
+
+
+    </script>
+</head>
+</html>
