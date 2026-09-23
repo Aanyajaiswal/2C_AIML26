@@ -1,4 +1,4 @@
- <html>
+ <!-- <html>
     <head>
         <script>
             class student
@@ -35,4 +35,57 @@
 
         </script>
     </head>
-</html> 
+</html>  -->
+
+
+<html>
+    <head>
+        <script>
+            class BankAccount
+            {
+                constructor(accountNo , holderName , balance)
+                {
+                    this.accountNo= accountNo;
+                    this.holderName= holderName;
+                    this.balance= balance;
+                }
+                deposit(amount)
+                {
+                   this.balance += amount;
+                   console.log("final amount: ",this.balance);
+                }
+                withdraw(amount)
+                {
+                    if(amount>this.balance)
+                    {
+                        console.log("insufficient amount!!");
+                    }
+                    else
+                    {
+                        this.balance-=amount;
+                        console.log("amount withdrawn!!");
+                    }
+                }
+                displayBalance()
+                {
+                console.log("Balance: ",this.balance);
+                }
+                static bankInfo()
+                {
+                console.log("Bank Name: ABC Bank");
+                console.log("General Banking Information: Safe and secure banking.");
+                }
+            }
+        let a1 = new BankAccount(101, "Aanya", 5000);
+        let a2 = new BankAccount(102, "Mayank", 3000);
+        a1.deposit(1000);
+        a1.withdraw(2000);
+        a1.displayBalance();
+
+        a2.deposit(500);
+        a2.withdraw(4000);
+        a2.displayBalance();
+        BankAccount.bankInfo();
+        </script>
+    </head>
+</html>
