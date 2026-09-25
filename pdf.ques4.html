@@ -1,58 +1,57 @@
+
+
+
+
 <html>
     <head>
         <script>
-            class product
+            class vehicle
             {
-                constructor(product_id, product_name, price)
-                {
-                    this.product_id = product_id;
-                    this.product_name = product_name;
-                    this.price = price;
+             constructor(vehicleNo, driverName, distance){
+                this.vehicleNo=vehicleNo;
+                this.driverName= driverName;
+                this.distance= distance;
+             }
+             calculateFare(){
+                let cost= 20;
+                let fare= cost*this.distance;
+                return fare;
+             }
+             static display(){
+                console.log(this.vehicle);
+                console.log(this.driverName);
+                console.log(this.distance);
+             }
+            }
+            class car extends vehicle{
+               constructor(vehicleNo, driverName, distance){
+                super(vehicleNo,driverName, distance );
+               }
+               claculateFare(){
+                let cost=15;
+                let fare=cost*this.distance;
+                return fare;
+               }
+            }
+            class bike extends vehicle{
+                constructor(vehicleNo, driverName, distance){
+                    super(vehicleNo,driverName, distance );
                 }
-                getDiscountedPrice(discount)
-                {
-                    this.price = this.price - discount;
-                }
-                static compareProducts(p1, p2)
-                {
-                    if (p1.price > p2.price)
-                {
-                    console.log(p1.price);
-                }
-                else
-                {
-                    console.log(p2.price);
-                }
-                }
-                display()
-                {
-                    console.log( this.product_id);
-                    console.log(this.product_name);
-                    console.log(this.price);
+                calculateFare(){
+                    let cost= 8;
+                    let fare=cost*this.distance;
+                    return fare;
                 }
             }
-            class electronic extends product
-            {
-                constructor(product_id, product_name, price, warrenty)
-                {
-                    super(product_id, product_name, price);
-                    this.warrenty = warrenty;
-                }
-                display()
-                {
-                    super.display();
-                    console.log(this.warrenty);
-                }
-            }
-            let p1 = new product("101", "Laptop", 50000);
-            let p2 = new product("102", "Mobile", 30000);
-            p1.getDiscountedPrice(5000);
-            p1.display();
-            p2.display();
-            let e1 = new electronic("103", "TV", 40000, "2 years");
-            e1.display();
-
-
+            let v1=new vehicle("1","a","10");
+            let v2= new vehicle ("2","b","20");
+            let c1= new car("3","c","30");
+            let b1 = new bike("4", "d", "40");
+            console.log(v1.calculateFare());
+            vehicle.display();
+            console.log(c1.calculateFare());
+            console.log(b1.calculateFare());
+            console.log(c1.calculateFare() - b1.calculateFare());
         </script>
     </head>
 </html>
